@@ -44,11 +44,54 @@ class DetailScreen extends StatelessWidget{
           //detail info
           //info atas
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
                 //info atas
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      candi.name,
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    IconButton(onPressed: (){}, 
+                    icon: const Icon(Icons.favorite_border))
+                  ],
+                ),
                 // info tengah
+                const SizedBox(height: 16),
+                Row(children: [
+                  Icon(Icons.place, color: Colors.red,),
+                  SizedBox(width: 8,),
+                  SizedBox(
+                    width: 70,
+                    child: Text('Lokasi', style: TextStyle(fontWeight: FontWeight.bold),),
+                  ),
+                  Text(': ${candi.location}'),
+                ],),
+                Row(children: [
+                  Icon(Icons.calendar_month, color: Colors.blue,),
+                  SizedBox(width: 8,),
+                  SizedBox(
+                    width: 70,
+                    child: Text('Dibangun', style: TextStyle(fontWeight: FontWeight.bold),),
+                  ),
+                  Text(': ${candi.built}'),
+                ],),
+                Row(children: [
+                  Icon(Icons.house, color: Colors.green,),
+                  SizedBox(width: 8,),
+                  SizedBox(
+                    width: 70,
+                    child: Text('Tipe', style: TextStyle(fontWeight: FontWeight.bold),),
+                  ),
+                  Text(': ${candi.type}'),
+                ],),
+                const SizedBox(height: 16,),
+                Divider(color: Colors.deepPurple.shade100,),
+                const SizedBox(height: 16,),
                 //info bawah
               ],
             )
