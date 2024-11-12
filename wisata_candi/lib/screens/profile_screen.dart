@@ -13,6 +13,19 @@ class _ProfileScreenState extends State<ProfileScreen>{
   String userName = 'Jovan';
   int favoriteCandiCount = 0;
 
+  //Todo: 5 implementasi fungsi signin
+  void signIn(){
+    setState(() {
+      isSignedIn = isSignedIn;
+    });
+  }
+  //Todo: 6 implementasi singout
+  void signOut(){
+    setState(() {
+      isSignedIn = isSignedIn;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -135,8 +148,8 @@ class _ProfileScreenState extends State<ProfileScreen>{
                 ),
                 Divider(color: Colors.deepPurple,),
                 const SizedBox(height: 20,),
-                isSignedIn ? TextButton(onPressed: (){}, child: const Text('Sign Out'))
-                  : TextButton(onPressed: (){}, child: const Text('Sign In'))
+                isSignedIn ? TextButton(onPressed: signOut, child: const Text('Sign Out'))
+                  : TextButton(onPressed: signIn, child: const Text('Sign In'))
               ],
             ),
           ),
